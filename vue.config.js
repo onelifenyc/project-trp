@@ -1,11 +1,12 @@
-const webpack = require("webpack")
+const webpack = require('webpack')
 
 module.exports = {
+  publicPath: 'trp',
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery"
+        $: 'jquery',
+        jQuery: 'jquery'
       })
     ]
   }
