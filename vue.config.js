@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 
 module.exports = {
-  publicPath: '/trp',
+  publicPath: process.env.NODE_ENV === 'production' ? '/trp/' : '/',
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
