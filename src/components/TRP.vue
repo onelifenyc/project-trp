@@ -1,6 +1,9 @@
 <template>
   <div id="container">
-    <div class="ui red small header">TENNIS RAQUET PHYSICS <sup>TM</sup></div>
+    <div class="ui red small header">
+      TENNIS RAQUET PHYSICS
+      <sup>TM</sup>
+    </div>
     <div class="ui stackable grid">
       <div class="twelve wide column">
         <div class="ui header">parameters</div>
@@ -9,8 +12,10 @@
             <div class="field"
                  v-for="(prop, idx) in Object.keys(viewModel)"
                  :key="idx">
-              <label :for="prop">{{ viewModel[prop].label.toUpperCase() }}
-                ( {{ viewModel[prop].unit }} )</label>
+              <label :for="prop">
+                {{ viewModel[prop].label.toUpperCase() }}
+                ( {{ viewModel[prop].unit }} )
+              </label>
               <div class="ui middle aligned grid">
                 <div class="ten wide column">
                   <div class="ui blue large slider"
@@ -20,10 +25,10 @@
                   <!-- <input v-model="viewModel[prop].val"
                        :id="prop"
                        type="text"
-                       readonly /> -->
+                  readonly />-->
                   <div class="ui large blue label">
                     {{ viewModel[prop].val }}
-                    <div class="detail">{{ viewModel[prop].unit }} </div>
+                    <div class="detail">{{ viewModel[prop].unit }}</div>
                   </div>
                 </div>
                 <div class="column"
@@ -42,21 +47,43 @@
         <div class="ui header">results</div>
         <div class="ui secondary padded segment">
           <div class="ui form">
-            <div class="field">
-              <label> MGR </label>
-              <input v-model.lazy="MGR"
-                     type="number"
-                     readonly />
-            </div>
-            <div class="field">
-              <label> M </label>
-              <input v-model.lazy="M"
-                     type="number" />
-            </div>
-            <br><br><br><br>
-            <div class="field">
-              <button class="ui black fluid button"
-                      @click="reset">Reset</button>
+            <div class="ui middle aligned grid">
+              <div class="row">
+                <div class="twelve wide column">
+                  <div class="field">
+                    <label>MGR</label>
+                    <input v-model.lazy="MGR"
+                           type="number"
+                           readonly />
+                  </div>
+                </div>
+                <div class="four wide column">
+                  <i title="not implemented"
+                     class="disabled link large green lock open icon"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="twelve wide column">
+                  <div class="field">
+                    <label>M</label>
+                    <input v-model.lazy="M"
+                           type="number" />
+                  </div>
+                </div>
+                <div class="four wide column">
+                  <i title="not implemented"
+                     class="disabled link large green lock open icon"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column"></div>
+              </div>
+              <div class="centered row">
+                <div class="field">
+                  <button class="ui black fluid button"
+                          @click="reset">Reset</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -66,6 +93,9 @@
 </template>
 
 <script>
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
+
 export default {
   data() {
     return {
@@ -188,8 +218,6 @@ export default {
     }
   },
   mounted() {
-    let vm = this
-
     this.init()
   }
 }
