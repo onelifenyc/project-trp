@@ -191,30 +191,38 @@ export default {
         }
       }
 
-      $('#slider-m').slider({
-        min: 250,
-        max: 400,
-        onMove(val) {
-          vm.viewModel.m.val = val
-        }
-      })
-      $('#slider-b').slider({
-        min: 29,
-        max: 35,
-        step: 0.01,
-        decimal: 2,
-        pageMultiplier: 5,
-        onMove(val) {
-          vm.viewModel.b.val = Number.parseFloat(val).toFixed(2)
-        }
-      })
-      $('#slider-sw').slider({
-        min: 250,
-        max: 400,
-        onMove(val) {
-          vm.viewModel.sw.val = val
-        }
-      })
+      $('#slider-m')
+        .slider({
+          min: 250,
+          max: 400,
+          onMove(val) {
+            vm.viewModel.m.val = val
+          }
+        })
+        .slider('set value', 250)
+
+      $('#slider-b')
+        .slider({
+          min: 29,
+          max: 35,
+          step: 0.01,
+          decimal: 2,
+          pageMultiplier: 5,
+          onMove(val) {
+            vm.viewModel.b.val = Number.parseFloat(val).toFixed(2)
+          }
+        })
+        .slider('set value', 29)
+
+      $('#slider-sw')
+        .slider({
+          min: 250,
+          max: 400,
+          onMove(val) {
+            vm.viewModel.sw.val = val
+          }
+        })
+        .slider('set value', 250)
     }
   },
   mounted() {
