@@ -21,7 +21,7 @@
                   <div class="ui blue large slider"
                        :id="`slider-${prop}`"></div>
                 </div>
-                <div class="five wide computer column">
+                <div class="four wide computer column">
                   <!-- <input v-model="viewModel[prop].val"
                        :id="prop"
                        type="text"
@@ -31,8 +31,7 @@
                     <div class="detail">{{ viewModel[prop].unit }}</div>
                   </div>
                 </div>
-                <div class="column"
-                     style="padding:0;">
+                <div class="two wide column">
                   <i class="link large icon"
                      :class="[viewModel[prop].locked ? 'red lock' : 'green lock open']"
                      @click="viewModel[prop].locked = !viewModel[prop].locked"></i>
@@ -47,45 +46,49 @@
         <div class="ui header">results</div>
         <div class="ui secondary padded segment">
           <div class="ui form">
-            <div class="ui middle aligned grid">
-              <div class="row">
+            <div class="field">
+              <label>MGR</label>
+
+              <div class="ui middle aligned grid">
+
                 <div class="twelve wide column">
-                  <div class="field">
-                    <label>MGR</label>
-                    <input v-model.lazy="MGR"
-                           type="number"
-                           readonly />
-                  </div>
+                  <input v-model.lazy="MGR"
+                         type="number"
+                         readonly />
                 </div>
-                <div class="four wide column">
+
+                <div class="four wide icon column">
                   <i title="not implemented"
                      class="disabled link large green lock open icon"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="twelve wide column">
-                  <div class="field">
-                    <label>M</label>
-                    <input v-model.lazy="M"
-                           type="number" />
-                  </div>
-                </div>
-                <div class="four wide column">
-                  <i title="not implemented"
-                     class="disabled link large green lock open icon"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="column"></div>
-              </div>
-              <div class="centered row">
-                <div class="field">
-                  <button class="ui black fluid button"
-                          @click="reset">Reset</button>
                 </div>
               </div>
             </div>
+
+            <div class="field">
+              <label>M</label>
+              <div class="ui middle aligned grid">
+
+                <div class="twelve wide column">
+                  <input v-model.lazy="M"
+                         type="number" />
+                </div>
+
+                <div class="four wide icon column">
+                  <i title="not implemented"
+                     class="disabled link large green lock open icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <br><br>
+            <br><br>
+
+            <div class="field">
+              <button class="ui fluid black button"
+                      @click="reset">Reset</button>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
