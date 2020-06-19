@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div>
     <div class="ui red small header">
       TENNIS RAQUET PHYSICS
       <sup>TM</sup>
@@ -235,7 +235,4 @@ export default {
 </script>
 
 <style>
-#container {
-  padding-top: 3rem;
-}
 </style>
