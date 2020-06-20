@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --copy",
     "build": "vue-cli-service build",
+    "publish": "deploy_docs.sh",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
