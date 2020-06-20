@@ -5,9 +5,9 @@
 
     <div class="ui top attached tabular menu">
       <a class="active item"
-         data-tab="trp">TRP</a>
+         data-tab="trp">TRP &nbsp;<sup>TM</sup></a>
       <a class="item"
-         data-tab="csvMerge">CSVMerge</a>
+         data-tab="csvMerge">CSVMerge <sup>TM</sup></a>
     </div>
     <div class="ui bottom attached tab padded segment"
          data-tab="trp">

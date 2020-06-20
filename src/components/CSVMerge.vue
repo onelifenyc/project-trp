@@ -25,19 +25,20 @@
         </div>
       </div>
 
-      <div class="ui basic segment"
-           v-if="filesLoaded">
-        <div class="ui red labeled icon button"
-             @click="parseToJSON">
+      <div class="ui basic fitted segment">
+        <button class="ui red labeled icon button"
+                @click="doTheMerge"
+                v-if="filesLoaded">
           <i class="sync icon"></i>
           Merge
-        </div>
+        </button>
       </div>
 
+      <div class="ui sub header"
+           v-if="csvFrom.json && csvTo.json">Results</div>
       <div class="ui segment"
            v-if="csvFrom.json && csvTo.json">
-        <div class="ui sub header">Results</div>
-        <div class="ui two column very relaxed grid">
+        <div class="ui equal width very relaxed divided grid">
           <div class="column">
             <span class="ui blue text">FROM</span>
             <pre>{{ csvFrom.json | pretty }}</pre>
@@ -46,8 +47,11 @@
             <span class="ui blue text">TO</span>
             <pre>{{ csvTo.json | pretty }}</pre>
           </div>
+          <div class="column">
+            <span class="ui blue text">FINAL</span>
+            <pre>{{ mergedJson | pretty }}</pre>
+          </div>
         </div>
-        <div class="ui vertical divider"></div>
       </div>
     </div>
 
@@ -75,12 +79,23 @@ export default {
         display: 'CSV File TO',
         file: null,
         json: null
-      }
+      },
+      mergedJson: null
     }
   },
   computed: {
     filesLoaded() {
       return this.csvFrom.file && this.csvTo.file
+    },
+    jsonCreated() {
+      return this.csvFrom.json && this.csvTo.json
+    }
+  },
+  watch: {
+    jsonCreated() {
+      const _finalKeys = Object.keys(this.csvTo.json[0])
+      let _mergedJson = []
+      this.mergedJson = _mergedJson
     }
   },
   filters: {
@@ -128,9 +143,17 @@ export default {
           vm.csvTo.json = results.data
         }
       })
+    },
+    doTheMerge() {
+      this.parseToJSON()
     }
   }
 }
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+pre {
+  font-size: 0.7rem;
+  color: blue;
+}
+</style>
