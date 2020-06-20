@@ -11,6 +11,7 @@
   "dependencies": {
     "core-js": "^2.6.11",
     "fomantic-ui": "^2.8.6",
+    "jquery": "^3.5.1",
     "papaparse": "^5.2.0",
     "vue": "^2.6.11"
   },
@@ -21,6 +22,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
